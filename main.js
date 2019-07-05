@@ -5,17 +5,16 @@ var module = angular.module("example", ["agGrid"]);
 module.controller("exampleCtrl", function($scope) {
 
     var columnDefs = [
-        {headerName: "Terminal Adı", field: "terminal", width: 150},
-        {headerName: "Lokasyon", field: "lokasyon", width: 150},
-        {headerName: "Site ID", field: "id", width: 150},
-        {headerName: "Yıl", field: "yil", width: 150},
-        {headerName: "Kullanılan Kota (GB)", field: "kota", width: 200}
+        {headerName: "Your name", field: "name", width: 150},
+        {headerName: "Your place", field: "place", width: 150},
+        {headerName: "Your old", field: "old", width: 150}
+        
     ];
 
     var rowData = [
-        {terminal: "Term1", lokasyon: "Ankara", id: 35000, kota: 150, yil:1997},
-        {terminal: "Term2", lokasyon: "Manisa", id: 32000, kota: 200, yil:1999},
-        {terminal: "Term3", lokasyon: "Antalya", id: 72000, kota: 170, yil:1998}
+        {name: "john", place: "Ankara", old: 35},
+        {name: "ferdinand", place: "Manisa", old: 32},
+        {name: "ceren", place: "Antalya", old: 27}
     ];
 
     $scope.gridOptions = {
@@ -29,7 +28,7 @@ module.controller("exampleCtrl", function($scope) {
         groupHeaders: true,
         toolPanelSuppressPivotMode: true,
         onModelUpdated: onModelUpdated
-        //localeText: MoganConstant.AG_GRID.localeText
+       
     };
 
     function onModelUpdated() {
